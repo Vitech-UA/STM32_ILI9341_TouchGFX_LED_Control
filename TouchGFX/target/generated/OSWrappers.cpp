@@ -20,7 +20,7 @@
 #include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/hal/OSWrappers.hpp>
 
-#include <stm32f3xx_hal.h>
+#include <stm32f4xx_hal.h>
 #include <TouchGFXHAL.hpp>
 #include <touchgfx/hal/OSWrappers.hpp>
 

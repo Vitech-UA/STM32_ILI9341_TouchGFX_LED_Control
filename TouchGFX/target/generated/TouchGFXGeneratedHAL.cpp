@@ -20,7 +20,7 @@
 #include <touchgfx/hal/OSWrappers.hpp>
 #include <gui/common/FrontendHeap.hpp>
 
-#include "stm32f3xx.h"
+#include "stm32f4xx.h"
 
 using namespace touchgfx;
 

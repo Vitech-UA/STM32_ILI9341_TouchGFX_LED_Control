@@ -24,7 +24,7 @@
 #include <STM32DMA.hpp>
 #include <TouchGFXHAL.hpp>
 #include <STM32TouchController.hpp>
-#include <stm32f3xx_hal.h>
+#include <stm32f4xx_hal.h>
 
 extern "C" void touchgfx_init();
 extern "C" void touchgfx_taskEntry();
