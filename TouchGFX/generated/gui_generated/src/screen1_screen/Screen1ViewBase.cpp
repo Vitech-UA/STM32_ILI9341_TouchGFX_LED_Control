@@ -5,14 +5,16 @@
 #include <touchgfx/Color.hpp>
 #include <BitmapDatabase.hpp>
 
-Screen1ViewBase::Screen1ViewBase()
+Screen1ViewBase::Screen1ViewBase() :
+    buttonCallback(this, &Screen1ViewBase::buttonCallbackHandler),
+    flexButtonCallback(this, &Screen1ViewBase::flexButtonCallbackHandler)
 {
 
     __background.setPosition(0, 0, 320, 240);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    gauge1.setBackground(touchgfx::Bitmap(BITMAP_BLUE_GAUGES_ORIGINAL_GAUGE_BACKGROUND_STYLE_00_ID));
-    gauge1.setPosition(69, 0, 251, 240);
+    gauge1.setBackground(touchgfx::Bitmap(BITMAP_BLUE_GAUGES_ORIGINAL_GAUGE_FILL_STYLE_01_ID));
+    gauge1.setPosition(109, 6, 196, 88);
     gauge1.setCenter(125, 125);
     gauge1.setStartEndAngle(-90, 90);
     gauge1.setRange(0, 100);
@@ -21,11 +23,73 @@ Screen1ViewBase::Screen1ViewBase()
     gauge1.setMovingNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
     gauge1.setSteadyNeedleRenderingAlgorithm(touchgfx::TextureMapper::BILINEAR_INTERPOLATION);
 
+    flexButton1.setBoxWithBorderPosition(0, 0, 78, 38);
+    flexButton1.setBorderSize(5);
+    flexButton1.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    flexButton1.setPosition(0, 0, 78, 38);
+    flexButton1.setAction(flexButtonCallback);
+
+    flexButton2.setBoxWithBorderPosition(0, 0, 78, 41);
+    flexButton2.setBorderSize(5);
+    flexButton2.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(0, 102, 153), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    flexButton2.setPosition(0, 199, 78, 41);
+    flexButton2.setAction(flexButtonCallback);
+
+    button1.setXY(122, 102);
+    button1.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    button1.setAction(buttonCallback);
+
+    button2.setXY(122, 169);
+    button2.setBitmaps(touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_ID), touchgfx::Bitmap(BITMAP_BLUE_BUTTONS_ROUND_EDGE_SMALL_PRESSED_ID));
+    button2.setAction(buttonCallback);
+
     add(__background);
     add(gauge1);
+    add(flexButton1);
+    add(flexButton2);
+    add(button1);
+    add(button2);
 }
 
 void Screen1ViewBase::setupScreen()
 {
 
+}
+
+void Screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &button1)
+    {
+        //Interaction3
+        //When button1 clicked call virtual function
+        //Call led_enable
+        led_enable();
+    }
+    else if (&src == &button2)
+    {
+        //Interaction4
+        //When button2 clicked call virtual function
+        //Call led_disable
+        led_disable();
+    }
+}
+
+void Screen1ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &flexButton1)
+    {
+        //Interaction2
+        //When flexButton1 clicked show gauge1
+        //Show gauge1
+        gauge1.setVisible(true);
+        gauge1.invalidate();
+    }
+    else if (&src == &flexButton2)
+    {
+        //Interaction1
+        //When flexButton2 clicked hide gauge1
+        //Hide gauge1
+        gauge1.setVisible(false);
+        gauge1.invalidate();
+    }
 }
