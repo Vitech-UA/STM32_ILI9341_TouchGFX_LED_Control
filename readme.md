@@ -3,10 +3,10 @@
 Дисплейний модуль: https://arduino.ua/prod1539-2-8-240x320-tft-lcd-spi-modyl
 
 
-![PINOUT](https://user-images.githubusercontent.com/74230330/152860406-94b400a4-ef96-48ed-acb1-7b66dc9506ea.jpg)
+![PINOUT](https://user-images.githubusercontent.com/74230330/152860406-94b400a4-ef96-48ed-acb1-7b66dc9506ea.jpg)  
 
 
-![photo_2022-02-07_21-41-56](https://user-images.githubusercontent.com/74230330/152860409-49b711ae-e2d4-4d78-878c-6185e0152bcc.jpg)
+![photo_2022-02-07_21-41-56](https://user-images.githubusercontent.com/74230330/152860409-49b711ae-e2d4-4d78-878c-6185e0152bcc.jpg)  
 
 info:
 1) https://support.touchgfx.com/4.14/docs/tutorials/tutorial-01
