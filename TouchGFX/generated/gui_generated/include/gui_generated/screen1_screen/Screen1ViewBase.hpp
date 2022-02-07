@@ -25,7 +25,6 @@ public:
     virtual void led_enable()
     {
         // Override and implement this function in Screen1
-
     }
 
     virtual void led_disable()
