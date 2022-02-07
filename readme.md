@@ -1,5 +1,5 @@
-# Проєкт-демка запущено на NUCLEO-F446RE лібу TouchGFX. З її допомогою відбувається керування LD2 на платі NUCLEO.
-Плата: https://arduino.ua/prod1845-plata-razrabotchika-nucleo-f446re
+### Проєкт-заготовка запущено на NUCLEO-F446RE лібу TouchGFX. З її допомогою відбувається керування LD2 на платі NUCLEO.###
+Плата: https://arduino.ua/prod1845-plata-razrabotchika-nucleo-f446re  
 Дисплейний модуль: https://arduino.ua/prod1539-2-8-240x320-tft-lcd-spi-modyl
 
 
